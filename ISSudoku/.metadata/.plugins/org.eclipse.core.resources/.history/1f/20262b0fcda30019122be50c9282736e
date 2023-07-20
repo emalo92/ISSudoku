@@ -1,0 +1,29 @@
+package Sudoku;
+
+public abstract class AbstractSudoku implements Problema {
+
+	@Override
+	public Livello livello() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Tipo tipo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String istruzioni() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Problema risolvi() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

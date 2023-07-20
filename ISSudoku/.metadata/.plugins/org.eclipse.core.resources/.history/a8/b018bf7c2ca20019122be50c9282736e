@@ -1,0 +1,9 @@
+package Sudoku;
+
+public class Istruzioni {
+	
+	String istruzioni;
+	
+	
+
+}

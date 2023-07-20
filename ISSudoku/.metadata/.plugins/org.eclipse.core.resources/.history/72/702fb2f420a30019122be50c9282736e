@@ -1,0 +1,21 @@
+package Sudoku;
+
+public class SSolver extends AbstractSolver {
+
+	@Override
+	public void update(int r, int c) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void setStop(boolean b) {
+		if (b) {
+			super.stop = true;
+		}
+		else super.stop = false;
+	}
+	
+	
+
+}

@@ -1,0 +1,38 @@
+package Sudoku;
+
+public abstract class AbstractSudoku implements Problema {
+
+	Livello liv;
+	Tipo tipo;
+	
+	
+	public Livello livello() {
+		return this.liv;
+	}
+
+	@Override
+	public Tipo tipo() {
+		return this.tipo;
+	}
+
+	@Override
+	public String istruzioni() {
+		String regole = "Il SUDOKU\r\n" + 
+				"È un gioco di logica nel quale al giocatore viene proposta una griglia di 9×9 celle, ciascuna\r\n" + 
+				"delle quali può contenere un numero da 1 a 9, oppure essere vuota; la griglia è suddivisa in 9\r\n" + 
+				"righe orizzontali, 9 colonne verticali e, da bordi in neretto, in 9 \"sottogriglie\", chiamate regioni,\r\n" + 
+				"di 3×3 celle contigue. Le griglie proposte al giocatore hanno da 20 a 35 celle contenenti un\r\n" + 
+				"numero. Lo scopo del gioco è quello di riempire le caselle bianche con numeri da 1 a 9, in\r\n" + 
+				"modo tale che in ogni riga, colonna e regione siano presenti tutte le cifre da 1 a 9 e, pertanto,\r\n" + 
+				"senza ripetizioni.\r\n" + 
+				"La difficoltà di uno schema dipende dalla quantità di numeri preinseriti";
+		return regole;
+	}
+
+	@Override
+	public Problema risolvi() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

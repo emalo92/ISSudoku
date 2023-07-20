@@ -1,0 +1,10 @@
+package Sudoku;
+
+public interface Problema {
+	
+	Livello livello();
+	Tipo tipo();
+	String istruzioni();
+	Problema risolvi();
+
+}

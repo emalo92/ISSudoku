@@ -1,0 +1,32 @@
+package Sudoku;
+
+import java.util.Scanner;
+
+public class SSolver extends AbstractSolver {
+	
+	public SSolver () {
+		super();
+	}
+
+	@Override
+	public void update(int r, int c) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setStop(boolean b) {
+		if (b) {
+			super.stop = true;
+		}
+		else super.stop = false;
+	}
+	
+	public boolean verificaConsistenza(int r, int c, int n) {
+		if ( verificaRiga(r,0,n) && verificaColonna(0,c,n) && verificaBlocco (r,c,n) ) {
+			return true;
+		}
+			else return false;
+	}
+
+}

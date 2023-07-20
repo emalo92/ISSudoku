@@ -1,0 +1,48 @@
+package Sudoku;
+
+public class ProblemaFactory implements Problema {
+	
+	protected Tipo t;
+	
+	public ProblemaFactory (Tipo t) {
+		this.t = t;
+	}
+
+	public Livello getLivello() {
+		return null;
+	}
+
+	@Override
+	public Tipo getTipo() {
+		if (Tipo.SUDOKU == t)
+			return t;
+		return null;
+	}
+
+	@Override
+	public String istruzioni() {
+		if (Tipo.SUDOKU == t)
+			return Sudoku.istruzioni();
+		return null;
+	}
+
+	@Override
+	public Problema risolvi() {
+		if (Tipo.SUDOKU == t)
+			return Sudoku.risolvi();
+		return null;
+	}
+	
+	public Solver getSolver() {
+		if (Tipo.SUDOKU == t)
+			return new SudokuSolver();
+		return null;
+	}
+	
+	public GeneratoreGriglia getGenerator() {
+		if (Tipo.SUDOKU == t)
+			return new SudokuGenerator();
+		return null;
+	}
+
+}

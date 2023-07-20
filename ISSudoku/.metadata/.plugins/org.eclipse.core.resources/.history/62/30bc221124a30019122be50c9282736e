@@ -1,0 +1,132 @@
+package Sudoku;
+
+import java.util.LinkedList;
+import java.util.Random;
+import java.util.Scanner;
+
+public abstract class AbstractSolver implements Solver {
+	
+	protected Random random;
+	protected int numSoluzioni = 0;
+	protected boolean stop;
+	protected int[][] griglia;
+	protected LinkedList<Casella> listaCas;
+	protected int rimanenti = 0;
+	
+	public AbstractSolver() {
+		random = new Random();
+		stop = false;
+		griglia = new int [9][9];
+	}
+	
+	private void inizializzaLista() { //per distinguere tipo, esporta questa classe fuori dalla astratta
+		listaCas = new LinkedList<Casella>();
+		//risoluzione per colonne
+		for (int i = 0; i<9; i++) {
+			for (int j = 0; j<9; j++) {
+				if (griglia [j][i] == 0) {
+					listaCas.add(new Casella(i,j));
+					rimanenti++;
+				}
+			}
+		}
+		
+	}
+	
+	public int[][] getGriglia() {
+		return this.griglia;
+	}
+	
+	public boolean getStop() {
+		return this.stop;
+	}
+	
+	public LinkedList<Casella> listaCas () {
+		return this.listaCas;
+	}
+	
+	public int[][] risolvi (int daRisolvere[][]) {
+		this.griglia = daRisolvere;
+		inizializzaLista();
+		if (risolvi(0)) {
+			return this.griglia;
+		}
+		return null;
+	}
+	
+	private boolean risolvi(int k) {
+		System.out.println("partito");
+		if(stop) { //termina immediatamente
+			System.out.println("terminato");
+			return false;
+		}
+		if ( k >= listaCas.size()) {
+			System.out.println("totale assegnamenti: " +(k+1));
+			return true; //se vuoi mantenere le soluzioni aggiungi una lista qui
+		}
+		Casella cell = listaCas.get(k);
+		for (int i = 1; i<=9; i++) {
+			if (verificaConsistenza(cell.riga, cell.colonna, i)) {
+				griglia [cell.riga][cell.colonna] = i;
+				//update (riga ,colonna)
+				if (risolvi(k+1)) {
+					System.out.println("avanti");
+					return true;
+				}
+			}
+		}
+		if (stop) {
+			return false;
+		}
+		griglia [cell.riga][cell.colonna] = 0;
+		//update...
+		return false;
+	}
+	
+	public boolean verificaConsistenza(int r, int c, int n) {
+		if ( verificaRiga(r,0,n) && verificaColonna(0,c,n) && verificaBlocco (r,c,n) ) {
+			System.out.println("verificato");
+			return true;
+		}
+			else return false;
+	}
+	
+	private boolean verificaRiga(int r, int c, int n) {
+		if(c<9) {
+			if (this.griglia[r][c] == n) {
+				return false;
+			}
+			else {
+				return verificaRiga (r, c+1, n);
+			}
+		}
+		return true;
+	}
+	
+	private boolean verificaColonna(int r, int c, int n) {
+		if(r<9) {
+			if (this.griglia[r][c] == n) {
+				return false;
+			}
+			else {
+				return verificaRiga (r+1, c, n);
+			}
+		}
+		return true;
+	}
+	
+	private boolean verificaBlocco (int r, int c, int n) {
+		r = (r/3)*3;
+		c = (c/3)*3;
+		for (int i = 0; i<3; i++) {
+			for (int j = 0; j<3; j++) {
+				if (griglia[r+i][c+j] == n) {
+					return false;
+				}
+			}
+		}
+		return true;
+				
+	}
+
+}

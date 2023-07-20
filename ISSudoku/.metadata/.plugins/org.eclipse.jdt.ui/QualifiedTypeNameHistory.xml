@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="solver.XSSolver"/>
+<fullyQualifiedTypeName name="generatore.XSudokuGenerator"/>
+<fullyQualifiedTypeName name="solver.Solver"/>
+<fullyQualifiedTypeName name="javax.swing.border.Border"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="sudoku.ProblemaFactory"/>
+<fullyQualifiedTypeName name="sudoku.Sudoku"/>
+<fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
+<fullyQualifiedTypeName name="util.Livello"/>
+<fullyQualifiedTypeName name="util.Tipo"/>
+</qualifiedTypeNameHistroy>

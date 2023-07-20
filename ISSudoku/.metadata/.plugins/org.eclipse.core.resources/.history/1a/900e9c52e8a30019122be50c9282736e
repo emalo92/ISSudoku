@@ -1,0 +1,13 @@
+package Sudoku;
+
+import java.util.LinkedList;
+
+public interface Solver {
+	
+	public int[][] risolvi ( int[][] daRisolvere);
+	public boolean verificaConsistenza (int r, int c, int n);
+	boolean getStop();
+	public void update(int r, int c);
+	void setStop(boolean b);
+	public LinkedList<int[][]> getListaSol();
+}

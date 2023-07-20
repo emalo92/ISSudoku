@@ -1,0 +1,7 @@
+package Sudoku;
+
+public interface GeneratoreGriglia {
+	
+	public int [][] creaSchemaCompleto();
+
+}

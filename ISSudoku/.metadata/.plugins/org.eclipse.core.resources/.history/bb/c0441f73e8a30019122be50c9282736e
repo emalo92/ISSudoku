@@ -1,0 +1,11 @@
+package Sudoku;
+
+public class SudokuGenerator implements GeneratoreGriglia {
+
+	@Override
+	public int[][] creaSchemaCompleto() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,17 @@
+INDEX VERSION 1.131+C:\Users\Emanuele\ISSudoku\.metadata\.plugins\org.eclipse.jdt.core
+2107290381.index
+2376847880.index
+830829973.index
+3343695767.index
+3553273179.index
+2509282172.index
+1123014310.index
+2071898679.index
+3154199120.index
+2571977212.index
+3390103071.index
+3012874858.index
+2332259597.index
+2342801907.index
+334863587.index
+2806464869.index

@@ -1,0 +1,25 @@
+package Sudoku;
+
+import java.util.Scanner;
+
+public class SSolver extends AbstractSolver {
+	
+	public SSolver () {
+		super();
+	}
+
+	@Override
+	public void update(int r, int c) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setStop(boolean b) {
+		if (b) {
+			super.stop = true;
+		}
+		else super.stop = false;
+	}
+
+}
